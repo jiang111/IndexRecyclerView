@@ -6,6 +6,8 @@
 2.侧滑删除联系人。<br />
 3.联系人索引。<br />
 <br />
+可以对比一下 这个: <br />
+https://github.com/jiang111/SortList
 
 效果图: <br />![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
 
