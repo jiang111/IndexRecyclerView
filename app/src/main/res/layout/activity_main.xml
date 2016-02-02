@@ -22,6 +22,7 @@
             android:layout_width="80.0dip"
             android:layout_height="80.0dip"
             android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"
             android:gravity="center"
             android:textColor="#ffffffff"
             android:textSize="30.0dip"

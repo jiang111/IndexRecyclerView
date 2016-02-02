@@ -46,8 +46,9 @@ import java.util.List;
 
 /**
  * Created by jiang on 12/3/15.
+ * 根据当前权限进行判断相关的滑动逻辑
  */
-public class ContactAdapter extends AnimalsAdapter<ContactAdapter.ContactViewHolder>
+public class ContactAdapter extends BaseAdapter<ContactAdapter.ContactViewHolder>
         implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder> {
     /**
      * 当前处于打开状态的item
@@ -61,13 +62,18 @@ public class ContactAdapter extends AnimalsAdapter<ContactAdapter.ContactViewHol
     private String createrID;
     private boolean isCreator;
 
+
+    public static final String OWNER = "1";
+    public static final String CREATER = "1";
+    public static final String STUDENT = "student";
+
     public ContactAdapter(Context ct, List<ContactModel.MembersEntity> mLists, int permission, String createrID) {
         this.mLists = mLists;
         mContext = ct;
         mPermission = permission;
         this.addAll(mLists);
         this.createrID = createrID;
-        if (createrID.equals("1")) {
+        if (createrID.equals(CREATER)) {
             isCreator = true;
         } else {
             isCreator = false;
@@ -84,7 +90,7 @@ public class ContactAdapter extends AnimalsAdapter<ContactAdapter.ContactViewHol
     @Override
     public void onBindViewHolder(ContactAdapter.ContactViewHolder holder, final int position) {
         SwipeItemLayout swipeRoot = holder.mRoot;
-        if (getItem(position).getId().equals("1")) {
+        if (getItem(position).getId().equals(OWNER)) {
             swipeRoot.setSwipeAble(false);
         } else if (isCreator) {
             swipeRoot.setSwipeAble(true);
@@ -115,7 +121,7 @@ public class ContactAdapter extends AnimalsAdapter<ContactAdapter.ContactViewHol
         } else {
             if (mPermission == CommonString.PermissionCode.TEACHER) {
                 if (position != 0) {
-                    if (getItem(position).getProfession().equals("student")) {
+                    if (getItem(position).getProfession().equals(STUDENT)) {
 
                         swipeRoot.setSwipeAble(true);
                         swipeRoot.setDelegate(new SwipeItemLayout.SwipeItemLayoutDelegate() {
@@ -177,7 +183,7 @@ public class ContactAdapter extends AnimalsAdapter<ContactAdapter.ContactViewHol
         TextView textView = (TextView) holder.itemView;
         String showValue = String.valueOf(getItem(position).getSortLetters().charAt(0));
         if ("$".equals(showValue)) {
-            textView.setText("课堂创建者");
+            textView.setText("群主");
         } else if ("%".equals(showValue)) {
             textView.setText("系统管理员");
 

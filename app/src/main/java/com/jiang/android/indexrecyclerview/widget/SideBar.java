@@ -97,13 +97,13 @@ public class SideBar extends View {
 
         for (int i = 0; i < b.length; i++) {
             paint.setColor(getResources().getColor(R.color.side_bar_text));
-             paint.setColor(Color.BLACK);
+            paint.setColor(Color.BLACK);
             paint.setTypeface(Typeface.DEFAULT);
             paint.setAntiAlias(true);
             paint.setTextSize(dip2px(mContext, 12));
             // 选中的状态
             if (i == choose) {
-                paint.setColor(getResources().getColor(R.color.colorAccent));
+                paint.setColor(getResources().getColor(R.color.colorPrimaryDark));
                 paint.setFakeBoldText(true);
             }
             // x坐标等于中间-字符串宽度的一半.

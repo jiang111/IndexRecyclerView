@@ -9,14 +9,11 @@ import java.util.Arrays;
 import java.util.Collection;
 
 
-/**
- * Adapter holding a list of animal names of type String. Note that each item must be unique.
- */
-public abstract class AnimalsAdapter<VH extends RecyclerView.ViewHolder>
+public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
         extends RecyclerView.Adapter<VH> {
     private ArrayList<ContactModel.MembersEntity> items = new ArrayList<>();
 
-    public AnimalsAdapter() {
+    public BaseAdapter() {
         setHasStableIds(true);
     }
 

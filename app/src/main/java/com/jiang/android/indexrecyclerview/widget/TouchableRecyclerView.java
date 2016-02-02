@@ -39,6 +39,7 @@ import com.jiang.android.indexrecyclerview.adapter.ContactAdapter;
 
 /**
  * Created by jiang on 15/12/23.
+ * 判断当前recyclerview的滑动事件，判断需不需要让划出来的按钮回去
  */
 public class TouchableRecyclerView extends RecyclerView {
 
