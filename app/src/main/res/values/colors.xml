@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="side_bar_text">#4A4A4A</color>
+    <color name="shadow_bg">#66000000</color>
+    <color name="edit_bg">#EFEFF4</color>
+    <color name="darker_gray">#9b9b9b</color>
+
+</resources>

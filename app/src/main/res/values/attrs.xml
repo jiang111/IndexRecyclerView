@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BGASwipeItemLayout">
+        <attr name="bga_sil_swipeDirection" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="bga_sil_bottomMode" format="enum">
+            <enum name="pullOut" value="0" />
+            <enum name="layDown" value="1" />
+        </attr>
+        <attr name="bga_sil_springDistance" format="dimension" />
+        <attr name="bga_sil_swipeAble" format="boolean" />
+    </declare-styleable>
+
+</resources>
