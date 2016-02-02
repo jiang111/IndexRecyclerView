@@ -4,10 +4,10 @@
 
 1.首字母悬浮在顶部。<br />
 2.侧滑删除联系人。<br />
-3.联系人索引<br />
+3.联系人索引。<br />
 <br />
 
-效果图 ![效果]{https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif}
+效果图: ![效果]{https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif}
 
-使用到的第三方库(部分)：
+使用到的第三方库(部分)：<br />
 https://github.com/timehop/sticky-headers-recyclerview
