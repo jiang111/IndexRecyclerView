@@ -13,3 +13,4 @@ https://github.com/jiang111/SortList
 
 使用到的第三方库(部分)：<br />
 https://github.com/timehop/sticky-headers-recyclerview
+https://github.com/daimajia/AndroidSwipeLayout
