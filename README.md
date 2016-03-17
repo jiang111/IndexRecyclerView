@@ -13,4 +13,4 @@ https://github.com/jiang111/SortList
 
 使用到的第三方库(部分)：<br />
 https://github.com/timehop/sticky-headers-recyclerview <br />
-https://github.com/daimajia/AndroidSwipeLayout
+https://github.com/daimajia/AndroidSwipeLayout  (看到daimajia的star才发现滑动的库用的是daimajia的😢)
