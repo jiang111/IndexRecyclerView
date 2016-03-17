@@ -12,5 +12,5 @@ https://github.com/jiang111/SortList
 效果图: <br />![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
 
 使用到的第三方库(部分)：<br />
-https://github.com/timehop/sticky-headers-recyclerview
+https://github.com/timehop/sticky-headers-recyclerview <br />
 https://github.com/daimajia/AndroidSwipeLayout
