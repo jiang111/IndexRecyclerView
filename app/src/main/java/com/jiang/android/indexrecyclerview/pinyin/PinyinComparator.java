@@ -1,4 +1,4 @@
-package com.jiang.android.indexrecyclerview.pingyin;
+package com.jiang.android.indexrecyclerview.pinyin;
 
 
 import com.jiang.android.indexrecyclerview.model.ContactModel;

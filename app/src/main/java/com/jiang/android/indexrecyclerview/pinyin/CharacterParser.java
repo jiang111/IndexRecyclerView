@@ -26,7 +26,7 @@
  * #                                                   #
  */
 
-package com.jiang.android.indexrecyclerview.pingyin;
+package com.jiang.android.indexrecyclerview.pinyin;
 
 /**
  * Created by jiang on 15/12/11.
