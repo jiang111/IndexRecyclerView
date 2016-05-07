@@ -1,5 +1,7 @@
 # IndexRecyclerView  
 
+博客地址:http://www.jyuesong.com
+
 通过RecyclerView实现联系人的功能。
 
 1.首字母悬浮在顶部。<br />
