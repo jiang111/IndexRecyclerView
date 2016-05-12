@@ -31,3 +31,7 @@ https://github.com/daimajia/AndroidSwipeLayout
 >* 用于学习RxJava操作符的APP: https://github.com/jiang111/RxJavaApp
 
 >* 展示注册进度的view: https://github.com/jiang111/ProgressView
+
+>* 可定制的ViewPagerIndicator: https://github.com/jiang111/ScalableTabIndicator
+
+>* 通过viewpager的滑动来对fragment内的元素进行动画操作: https://github.com/jiang111/ViewPagerTransformer
