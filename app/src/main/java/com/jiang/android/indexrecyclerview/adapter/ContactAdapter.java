@@ -82,91 +82,106 @@ public class ContactAdapter extends BaseAdapter<ContactAdapter.ContactViewHolder
 
     @Override
     public ContactAdapter.ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_contact, parent, false);
-        return new ContactViewHolder(view);
+        if (viewType == HEAD) {
+            return new ContactViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.head_view, parent, false), false);
+        } else {
+            View view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_contact, parent, false);
+            return new ContactViewHolder(view, true);
+        }
     }
 
     @Override
-    public void onBindViewHolder(ContactAdapter.ContactViewHolder holder, final int position) {
-        SwipeItemLayout swipeRoot = holder.mRoot;
-        if (getItem(position).getId().equals(OWNER)) {
-            swipeRoot.setSwipeAble(false);
-        } else if (isCreator) {
-            swipeRoot.setSwipeAble(true);
-            swipeRoot.setDelegate(new SwipeItemLayout.SwipeItemLayoutDelegate() {
-                @Override
-                public void onSwipeItemLayoutOpened(SwipeItemLayout swipeItemLayout) {
-                    closeOpenedSwipeItemLayoutWithAnim();
-                    mOpenedSil.add(swipeItemLayout);
-                }
+    public void onBindViewHolder(ContactAdapter.ContactViewHolder holder, final int pos) {
 
-                @Override
-                public void onSwipeItemLayoutClosed(SwipeItemLayout swipeItemLayout) {
-                    mOpenedSil.remove(swipeItemLayout);
-                }
+        if (pos == 0) {
+            //TODO... do some job
 
-                @Override
-                public void onSwipeItemLayoutStartOpen(SwipeItemLayout swipeItemLayout) {
-                    closeOpenedSwipeItemLayoutWithAnim();
-                }
-            });
-            holder.mDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    ((MainActivity) mContext).deleteUser(position);
-                }
-            });
         } else {
-            if (mPermission == CommonString.PermissionCode.TEACHER) {
-                if (position != 0) {
-                    if (getItem(position).getProfession().equals(STUDENT)) {
+            final int position = pos - 1;
 
-                        swipeRoot.setSwipeAble(true);
-                        swipeRoot.setDelegate(new SwipeItemLayout.SwipeItemLayoutDelegate() {
-                            @Override
-                            public void onSwipeItemLayoutOpened(SwipeItemLayout swipeItemLayout) {
-                                closeOpenedSwipeItemLayoutWithAnim();
-                                mOpenedSil.add(swipeItemLayout);
-                            }
+            SwipeItemLayout swipeRoot = holder.mRoot;
+            if (getItem(position).getId().equals(OWNER)) {
+                swipeRoot.setSwipeAble(false);
+            } else if (isCreator) {
+                swipeRoot.setSwipeAble(true);
+                swipeRoot.setDelegate(new SwipeItemLayout.SwipeItemLayoutDelegate() {
+                    @Override
+                    public void onSwipeItemLayoutOpened(SwipeItemLayout swipeItemLayout) {
+                        closeOpenedSwipeItemLayoutWithAnim();
+                        mOpenedSil.add(swipeItemLayout);
+                    }
 
-                            @Override
-                            public void onSwipeItemLayoutClosed(SwipeItemLayout swipeItemLayout) {
-                                mOpenedSil.remove(swipeItemLayout);
-                            }
+                    @Override
+                    public void onSwipeItemLayoutClosed(SwipeItemLayout swipeItemLayout) {
+                        mOpenedSil.remove(swipeItemLayout);
+                    }
 
-                            @Override
-                            public void onSwipeItemLayoutStartOpen(SwipeItemLayout swipeItemLayout) {
-                                closeOpenedSwipeItemLayoutWithAnim();
-                            }
-                        });
-                        holder.mDelete.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+                    @Override
+                    public void onSwipeItemLayoutStartOpen(SwipeItemLayout swipeItemLayout) {
+                        closeOpenedSwipeItemLayoutWithAnim();
+                    }
+                });
+                holder.mDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                                ((MainActivity) mContext).deleteUser(position);
-                            }
-                        });
+                        ((MainActivity) mContext).deleteUser(position);
+                    }
+                });
+            } else {
+                if (mPermission == CommonString.PermissionCode.TEACHER) {
+                    if (position != 0) {
+                        if (getItem(position).getProfession().equals(STUDENT)) {
+
+                            swipeRoot.setSwipeAble(true);
+                            swipeRoot.setDelegate(new SwipeItemLayout.SwipeItemLayoutDelegate() {
+                                @Override
+                                public void onSwipeItemLayoutOpened(SwipeItemLayout swipeItemLayout) {
+                                    closeOpenedSwipeItemLayoutWithAnim();
+                                    mOpenedSil.add(swipeItemLayout);
+                                }
+
+                                @Override
+                                public void onSwipeItemLayoutClosed(SwipeItemLayout swipeItemLayout) {
+                                    mOpenedSil.remove(swipeItemLayout);
+                                }
+
+                                @Override
+                                public void onSwipeItemLayoutStartOpen(SwipeItemLayout swipeItemLayout) {
+                                    closeOpenedSwipeItemLayoutWithAnim();
+                                }
+                            });
+                            holder.mDelete.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    ((MainActivity) mContext).deleteUser(position);
+                                }
+                            });
+                        } else {
+                            swipeRoot.setSwipeAble(false);
+                        }
                     } else {
                         swipeRoot.setSwipeAble(false);
                     }
                 } else {
                     swipeRoot.setSwipeAble(false);
                 }
-            } else {
-                swipeRoot.setSwipeAble(false);
             }
+            TextView textView = holder.mName;
+            textView.setText(getItem(position).getUsername());
         }
-        TextView textView = holder.mName;
-        textView.setText(getItem(position).getUsername());
-
     }
 
     @Override
     public long getHeaderId(int position) {
-
-        return getItem(position).getSortLetters().charAt(0);
+        if (position == 0) {
+            return -100;
+        } else {
+            return getItem(position - 1).getSortLetters().charAt(0);
+        }
 
     }
 
@@ -179,16 +194,21 @@ public class ContactAdapter extends BaseAdapter<ContactAdapter.ContactViewHolder
     }
 
     @Override
-    public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder, int position) {
-        TextView textView = (TextView) holder.itemView;
-        String showValue = String.valueOf(getItem(position).getSortLetters().charAt(0));
-        if ("$".equals(showValue)) {
-            textView.setText("群主");
-        } else if ("%".equals(showValue)) {
-            textView.setText("系统管理员");
+    public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder, int pos) {
+        if (pos == 0) {
 
         } else {
-            textView.setText(showValue);
+            int position = pos - 1;
+            TextView textView = (TextView) holder.itemView;
+            String showValue = String.valueOf(getItem(position).getSortLetters().charAt(0));
+            if ("$".equals(showValue)) {
+                textView.setText("群主");
+            } else if ("%".equals(showValue)) {
+                textView.setText("系统管理员");
+
+            } else {
+                textView.setText(showValue);
+            }
         }
 
     }
@@ -219,12 +239,15 @@ public class ContactAdapter extends BaseAdapter<ContactAdapter.ContactViewHolder
         public SwipeItemLayout mRoot;
         public TextView mDelete;
 
-        public ContactViewHolder(View itemView) {
+        public ContactViewHolder(View itemView, boolean fromItem) {
             super(itemView);
-            mName = (TextView) itemView.findViewById(R.id.item_contact_title);
-            mRoot = (SwipeItemLayout) itemView.findViewById(R.id.item_contact_swipe_root);
-            mDelete = (TextView) itemView.findViewById(R.id.item_contact_delete);
-
+            if (fromItem) {
+                mName = (TextView) itemView.findViewById(R.id.item_contact_title);
+                mRoot = (SwipeItemLayout) itemView.findViewById(R.id.item_contact_swipe_root);
+                mDelete = (TextView) itemView.findViewById(R.id.item_contact_delete);
+            } else {
+                //TODO... do some job
+            }
 
         }
 

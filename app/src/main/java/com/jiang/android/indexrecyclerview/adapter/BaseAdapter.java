@@ -17,6 +17,11 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
         setHasStableIds(true);
     }
 
+
+    public static final int HEAD = 618;
+    public static final int ITEM = 619;
+
+
     public void add(ContactModel.MembersEntity object) {
         items.add(object);
         notifyDataSetChanged();
@@ -51,15 +56,30 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
 
     public ContactModel.MembersEntity getItem(int position) {
         return items.get(position);
+
     }
 
     @Override
     public long getItemId(int position) {
-        return getItem(position).hashCode();
+        if (position == 0) {
+            return -1;
+        } else {
+            return getItem(position - 1).hashCode();
+        }
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return items.size() + 1;
+    }
+
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position == 0) {
+            return HEAD;
+        } else {
+            return ITEM;
+        }
     }
 }

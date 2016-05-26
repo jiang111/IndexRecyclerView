@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -16,7 +15,6 @@ import com.jiang.android.indexrecyclerview.model.ContactModel;
 import com.jiang.android.indexrecyclerview.pinyin.CharacterParser;
 import com.jiang.android.indexrecyclerview.pinyin.PinyinComparator;
 import com.jiang.android.indexrecyclerview.widget.DividerDecoration;
-import com.jiang.android.indexrecyclerview.widget.SideBar;
 import com.jiang.android.indexrecyclerview.widget.TouchableRecyclerView;
 
 import java.util.ArrayList;
@@ -29,8 +27,6 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private SideBar mSideBar;
-    private TextView mUserDialog;
     private TouchableRecyclerView mRecyclerView;
 
     ContactModel mModel;
@@ -59,10 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         characterParser = CharacterParser.getInstance();
         pinyinComparator = new PinyinComparator();
-        mSideBar = (SideBar) findViewById(R.id.contact_sidebar);
-        mUserDialog = (TextView) findViewById(R.id.contact_dialog);
         mRecyclerView = (TouchableRecyclerView) findViewById(R.id.contact_member);
-        mSideBar.setTextView(mUserDialog);
 
 
 //        fillData();
@@ -90,20 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUI() {
 
-        mSideBar.setOnTouchingLetterChangedListener(new SideBar.OnTouchingLetterChangedListener() {
 
-            @Override
-            public void onTouchingLetterChanged(String s) {
-                if (mAdapter != null) {
-                    mAdapter.closeOpenedSwipeItemLayoutWithAnim();
-                }
-                int position = mAdapter.getPositionForSection(s.charAt(0));
-                if (position != -1) {
-                    mRecyclerView.scrollToPosition(position);
-                }
-
-            }
-        });
         seperateLists(mModel);
 
         if (mAdapter == null) {
