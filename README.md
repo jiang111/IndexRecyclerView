@@ -13,7 +13,10 @@
 效果图: <br />![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
 
  <br />
+  <br />
+  <br />
  在head_recyclerview branch实现了带head的RecyclerView <br />
+ 
 ![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/head.gif)
 
 ###使用到的第三方库(部分)：<br />
