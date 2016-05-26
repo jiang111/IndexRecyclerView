@@ -8,10 +8,13 @@
 2.侧滑删除联系人。<br />
 3.联系人索引。<br />
 <br />
-可以对比一下 这个: <br />
-https://github.com/jiang111/SortList
+
 
 效果图: <br />![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
+
+ <br />
+ 在head_recyclerview branch实现了带head的RecyclerView <br />
+![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/head.gif)
 
 ###使用到的第三方库(部分)：<br />
 https://github.com/timehop/sticky-headers-recyclerview <br />
