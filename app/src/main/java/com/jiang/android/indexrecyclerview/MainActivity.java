@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 int position = mAdapter.getPositionForSection(s.charAt(0));
                 if (position != -1) {
-                    mRecyclerView.scrollToPosition(position);
+                    mRecyclerView.getLayoutManager().scrollToPosition(position);
                 }
 
             }
