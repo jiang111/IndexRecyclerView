@@ -34,6 +34,14 @@
             android:layout_height="fill_parent"
             android:layout_gravity="right|center"
             android:layout_marginRight="3dp" />
+
+        <com.jiang.android.indexrecyclerview.widget.ZSideBar
+          android:id="@+id/contact_zsidebar"
+          android:layout_width="24dp"
+          android:layout_height="match_parent"
+          android:layout_gravity="end"
+          android:visibility="gone"
+          />
     </FrameLayout>
 
 
