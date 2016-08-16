@@ -28,6 +28,8 @@
 
 package com.jiang.android.indexrecyclerview.model;
 
+import com.jiang.android.indexrecyclerview.widget.Indexable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -133,7 +135,7 @@ public class ContactModel {
         }
     }
 
-    public static class MembersEntity {
+    public static class MembersEntity implements Indexable{
 
         private String id;
 
@@ -142,6 +144,11 @@ public class ContactModel {
         private String profession;
 
         public String getSortLetters() {
+            return sortLetters;
+        }
+
+        @Override public String getIndex()
+        {
             return sortLetters;
         }
 
