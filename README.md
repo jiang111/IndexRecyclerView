@@ -13,7 +13,7 @@
 效果图: <br />![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
 
 <br />
-![](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/z.png)
+<img src="https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/z.png" width="500" />
 
  <br />
   <br />
