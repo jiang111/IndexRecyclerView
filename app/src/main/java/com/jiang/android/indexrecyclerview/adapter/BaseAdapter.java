@@ -27,7 +27,8 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
         notifyDataSetChanged();
     }
 
-    public void addAll(Collection<ContactModel.MembersEntity> collection) {
+    public void addAll(Collection<ContactModel.MembersEntity> collection)
+    {
         if (collection != null) {
             items.clear();
             items.addAll(collection);
