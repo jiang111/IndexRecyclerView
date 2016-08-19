@@ -1,9 +1,28 @@
-# IndexRecyclerView  
-
-博客地址:http://www.jyuesong.com
+[![](https://jitpack.io/v/jiang111/IndexRecyclerView.svg)](https://jitpack.io/#jiang111/IndexRecyclerView)
 
 ###通过RecyclerView实现联系人的功能。
 
+###usage:
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+
+Step 2. Add the dependency
+```
+	dependencies {
+	        compile 'com.github.jiang111:IndexRecyclerView:1.0'
+	}
+```
+
+###demo:
 1.首字母悬浮在顶部。<br />
 2.侧滑删除联系人。<br />
 3.联系人索引。<br />
