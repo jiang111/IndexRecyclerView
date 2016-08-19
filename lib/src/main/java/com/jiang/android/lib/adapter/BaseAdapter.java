@@ -1,33 +1,31 @@
-package com.jiang.android.indexrecyclerview.adapter;
+package com.jiang.android.lib.adapter;
 
 import android.support.v7.widget.RecyclerView;
-
-import com.jiang.android.indexrecyclerview.model.ContactModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 
-public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
+public abstract class BaseAdapter<T,VH extends RecyclerView.ViewHolder>
         extends RecyclerView.Adapter<VH> {
-    private ArrayList<ContactModel.MembersEntity> items = new ArrayList<>();
+    private ArrayList<T> items = new ArrayList<>();
 
     public BaseAdapter() {
         setHasStableIds(true);
     }
 
-    public void add(ContactModel.MembersEntity object) {
+    public void add(T object) {
         items.add(object);
         notifyDataSetChanged();
     }
 
-    public void add(int index, ContactModel.MembersEntity object) {
+    public void add(int index, T object) {
         items.add(index, object);
         notifyDataSetChanged();
     }
 
-    public void addAll(Collection<ContactModel.MembersEntity> collection)
+    public void addAll(Collection<T> collection)
     {
         if (collection != null) {
             items.clear();
@@ -36,7 +34,7 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
         }
     }
 
-    public void addAll(ContactModel.MembersEntity... items) {
+    public void addAll(T... items) {
         addAll(Arrays.asList(items));
     }
 
@@ -45,12 +43,12 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder>
         notifyDataSetChanged();
     }
 
-    public void remove(ContactModel.MembersEntity object) {
+    public void remove(T object) {
         items.remove(object);
         notifyDataSetChanged();
     }
 
-    public ContactModel.MembersEntity getItem(int position) {
+    public T getItem(int position) {
         return items.get(position);
     }
 

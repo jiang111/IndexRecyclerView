@@ -1,6 +1,5 @@
 package com.jiang.android.indexrecyclerview;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,7 +15,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jiang.android.indexrecyclerview.adapter.CommonString;
 import com.jiang.android.indexrecyclerview.adapter.ContactAdapter;
-import com.jiang.android.indexrecyclerview.adapter.expandRecyclerviewadapter.StickyRecyclerHeadersDecoration;
 import com.jiang.android.indexrecyclerview.model.ContactModel;
 import com.jiang.android.indexrecyclerview.pinyin.CharacterParser;
 import com.jiang.android.indexrecyclerview.pinyin.PinyinComparator;
@@ -24,6 +22,7 @@ import com.jiang.android.indexrecyclerview.widget.DividerDecoration;
 import com.jiang.android.indexrecyclerview.widget.SideBar;
 import com.jiang.android.indexrecyclerview.widget.TouchableRecyclerView;
 import com.jiang.android.indexrecyclerview.widget.ZSideBar;
+import com.jiang.android.lib.adapter.expand.StickyRecyclerHeadersDecoration;
 
 import java.util.ArrayList;
 import java.util.Collections;

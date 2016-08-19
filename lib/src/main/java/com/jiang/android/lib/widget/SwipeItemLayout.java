@@ -1,5 +1,5 @@
 
-package com.jiang.android.indexrecyclerview.widget;
+package com.jiang.android.lib.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,7 +18,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 
-import com.jiang.android.indexrecyclerview.R;
+import com.jiang.android.lib.R;
 
 import java.lang.reflect.Method;
 

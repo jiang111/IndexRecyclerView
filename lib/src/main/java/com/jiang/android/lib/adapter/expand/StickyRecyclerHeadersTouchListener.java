@@ -1,4 +1,4 @@
-package com.jiang.android.indexrecyclerview.adapter.expandRecyclerviewadapter;
+package com.jiang.android.lib.adapter.expand;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;

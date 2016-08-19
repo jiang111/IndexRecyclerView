@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.jiang.android.indexrecyclerview.widget.SwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.jiang.android.lib.widget.SwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_contact_swipe_root"
     android:layout_width="match_parent"
@@ -42,6 +42,6 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-</com.jiang.android.indexrecyclerview.widget.SwipeItemLayout>
+</com.jiang.android.lib.widget.SwipeItemLayout>
 
 

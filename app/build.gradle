@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.google.code.gson:gson:2.2.4'
 
+    compile project(path: ':lib')
 }

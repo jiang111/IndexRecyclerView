@@ -1,4 +1,4 @@
-package com.jiang.android.indexrecyclerview.adapter.expandRecyclerviewadapter;
+package com.jiang.android.lib.adapter.expand;
 
 import android.graphics.Rect;
 import android.view.View;

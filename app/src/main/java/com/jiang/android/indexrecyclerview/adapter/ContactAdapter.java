@@ -37,10 +37,11 @@ import android.widget.TextView;
 
 import com.jiang.android.indexrecyclerview.MainActivity;
 import com.jiang.android.indexrecyclerview.R;
-import com.jiang.android.indexrecyclerview.adapter.expandRecyclerviewadapter.StickyRecyclerHeadersAdapter;
 import com.jiang.android.indexrecyclerview.model.ContactModel;
 import com.jiang.android.indexrecyclerview.widget.IndexAdapter;
-import com.jiang.android.indexrecyclerview.widget.SwipeItemLayout;
+import com.jiang.android.lib.adapter.BaseAdapter;
+import com.jiang.android.lib.adapter.expand.StickyRecyclerHeadersAdapter;
+import com.jiang.android.lib.widget.SwipeItemLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,7 @@ import java.util.List;
  * Created by jiang on 12/3/15.
  * 根据当前权限进行判断相关的滑动逻辑
  */
-public class ContactAdapter extends BaseAdapter<ContactAdapter.ContactViewHolder>
+public class ContactAdapter extends BaseAdapter<ContactModel.MembersEntity,ContactAdapter.ContactViewHolder>
         implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder>,IndexAdapter
 {
     /**
