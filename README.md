@@ -18,6 +18,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```
 	dependencies {
+	        compile 'com.android.support:recyclerview-v7:23+'
 	        compile 'com.github.jiang111:IndexRecyclerView:1.0'
 	}
 ```
