@@ -1,6 +1,6 @@
 [![](https://jitpack.io/v/jiang111/IndexRecyclerView.svg)](https://jitpack.io/#jiang111/IndexRecyclerView)
 
-###通过RecyclerView实现联系人的功能。
+###a Contact list implements by  Recyclerview 。
 
 ###usage:
 Step 1. Add the JitPack repository to your build file
@@ -23,14 +23,12 @@ Step 2. Add the dependency
 	}
 ```
 
-###demo:
-1.首字母悬浮在顶部。<br />
-2.侧滑删除联系人。<br />
-3.联系人索引。<br />
-<br />
+step 3. go to [DEMO](https://github.com/jiang111/IndexRecyclerView/blob/master/app/src/main/java/com/jiang/android/indexrecyclerview/adapter/ContactAdapter.java) 
 
 
-效果图: <br />![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
+###art:
+
+![](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
 
 <br />
 <img src="https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/z.png" width="500" />
@@ -38,11 +36,11 @@ Step 2. Add the dependency
  <br />
   <br />
   <br />
- 在head_recyclerview branch实现了带head的RecyclerView <br />
+  there is a recyclerview with head, in head_recyclerview branch <br />
  
-![效果](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/head.gif)
+![](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/head.gif)
 
-###参考的第三方库(部分)：<br />
+###reference：<br />
 https://github.com/timehop/sticky-headers-recyclerview <br />
 https://github.com/daimajia/AndroidSwipeLayout  
 
