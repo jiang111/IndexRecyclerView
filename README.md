@@ -1,6 +1,6 @@
 [![](https://jitpack.io/v/jiang111/IndexRecyclerView.svg)](https://jitpack.io/#jiang111/IndexRecyclerView)
 
-###a Contact list implements by  Recyclerview 。
+###a Contact list implements by  Recyclerview
 
 ###usage:
 Step 1. Add the JitPack repository to your build file
