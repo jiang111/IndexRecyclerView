@@ -42,7 +42,6 @@ step 3. go to [DEMO](https://github.com/jiang111/IndexRecyclerView/blob/master/a
 
 ###reference：<br />
 https://github.com/timehop/sticky-headers-recyclerview <br />
-https://github.com/daimajia/AndroidSwipeLayout  
 
 ### License
 
