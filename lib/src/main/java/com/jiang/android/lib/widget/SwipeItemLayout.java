@@ -465,6 +465,10 @@ public class SwipeItemLayout extends RelativeLayout {
      */
     private void smoothSlideTo(int isOpen) {
         if (mDragHelper.smoothSlideViewTo(mTopView, getCloseOrOpenTopViewFinalLeft(isOpen), getPaddingTop() + mTopLp.topMargin)) {
+            if(isOpen == 1){
+                mBottomView.setVisibility(VISIBLE);
+            }
+
             ViewCompat.postInvalidateOnAnimation(this);
         }
     }
@@ -496,6 +500,16 @@ public class SwipeItemLayout extends RelativeLayout {
 
     private int getCloseOrOpenTopViewFinalLeft(int isOpen) {
         int left = getPaddingLeft() + mTopLp.leftMargin;
+        if (mSwipeDirection == SwipeDirection.Left) {
+            left = left - isOpen * mDragRange;
+        } else {
+            left = left + isOpen * mDragRange;
+        }
+        return left;
+    }
+
+    private int getCloseOrOpenBottomViewFinalLeft(int isOpen) {
+        int left = getWidth() - mBottomView.getWidth();
         if (mSwipeDirection == SwipeDirection.Left) {
             left = left - isOpen * mDragRange;
         } else {
