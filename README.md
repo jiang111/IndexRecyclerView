@@ -19,7 +19,7 @@ Step 2. Add the dependency
 ```
 	dependencies {
 	        compile 'com.android.support:recyclerview-v7:23+'
-	        compile 'com.github.jiang111:IndexRecyclerView:1.0'
+	        compile 'com.github.jiang111:IndexRecyclerView:1.1'
 	}
 ```
 
