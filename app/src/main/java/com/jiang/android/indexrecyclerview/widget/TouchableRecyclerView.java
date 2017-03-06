@@ -64,7 +64,8 @@ public class TouchableRecyclerView extends RecyclerView {
         Slop = ViewConfiguration.get(mContext).getScaledEdgeSlop();
     }
 
-
+    int dx = 0;
+    int dy = 0;
     /**
      * 判断 当前手势触摸的距离是否为拖动的最小距离
      *
@@ -74,8 +75,7 @@ public class TouchableRecyclerView extends RecyclerView {
     @Override
     public boolean onTouchEvent(MotionEvent e) {
 
-        int dx = 0;
-        int dy = 0;
+
 
         switch (e.getAction()) {
             case MotionEvent.ACTION_DOWN:
