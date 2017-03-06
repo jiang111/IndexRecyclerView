@@ -61,7 +61,7 @@ public class TouchableRecyclerView extends RecyclerView {
 
     private void initEvent(Context context) {
         mContext = context;
-        Slop = ViewConfiguration.get(mContext).getScaledEdgeSlop();
+        Slop = ViewConfiguration.get(mContext).getScaledTouchSlop();
     }
 
     int dx = 0;
