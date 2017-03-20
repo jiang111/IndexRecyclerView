@@ -1,8 +1,8 @@
 [![](https://jitpack.io/v/jiang111/IndexRecyclerView.svg)](https://jitpack.io/#jiang111/IndexRecyclerView)
 
-###a Contact list implements by  Recyclerview
+### a Contact list implements by  Recyclerview
 
-###usage:
+### usage:
 Step 1. Add the JitPack repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
@@ -26,7 +26,7 @@ Step 2. Add the dependency
 step 3. go to [DEMO](https://github.com/jiang111/IndexRecyclerView/blob/master/app/src/main/java/com/jiang/android/indexrecyclerview/adapter/ContactAdapter.java) 
 
 
-###art:
+### art:
 
 ![](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/art.gif)
 
@@ -40,7 +40,7 @@ step 3. go to [DEMO](https://github.com/jiang111/IndexRecyclerView/blob/master/a
  
 ![](https://raw.githubusercontent.com/jiang111/IndexRecyclerView/master/art/head.gif)
 
-###reference：<br />
+### reference：<br />
 https://github.com/timehop/sticky-headers-recyclerview <br />
 https://github.com/bingoogolapple/BGASwipeItemLayout-Android
 
