@@ -47,7 +47,7 @@ https://github.com/bingoogolapple/BGASwipeItemLayout-Android
 
 
 ### 捐赠
-如果您觉得本项目对您有帮助，欢迎请作者一杯咖啡 <br /><br />
+如果您觉得本项目对您有帮助，欢迎请作者一杯咖啡 [use paypal](https://www.paypal.me/jyuesong) <br /><br />
 ![](https://raw.githubusercontent.com/jiang111/RxJavaApp/master/qrcode/wechat_alipay.png)
 
 
