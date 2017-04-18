@@ -123,11 +123,18 @@ public class CharacterParser {
      * 单字解析 * * @param str * @return
      */
     public String convert(String str) {
-        String result = null;
+        
+         String result = null;
+        if (str == null || str.length() == 0) {
+            return null;
+        }
         int ascii = getChsAscii(str);
         if (ascii > 0 && ascii < 160) {
             result = String.valueOf((char) ascii);
         } else {
+            if (ascii == 0) {//输入全拼音
+                return str;
+            }
             for (int i = (pyvalue.length - 1); i >= 0; i--) {
                 if (pyvalue[i] <= ascii) {
                     result = pystr[i];
@@ -136,6 +143,7 @@ public class CharacterParser {
             }
         }
         return result;
+    
     }
 
     /**
